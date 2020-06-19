@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.demo.mapper.HomeworkMapper">
+
+    <!--新增-->
+    <insert id="insertHomework">
+        insert into s_homework (id,title,content) values (#{homeworkId},#{homeworkTitle},#{homeworkContent});
+    </insert>
+
+    <select id="selectHomework" resultType="Homework">
+        select * from s_homework;
+    </select>
+
+    <select id="findHomeworkById" resultType="Homework">
+        select * from s_homework where homeworkId=#{homeworkId}
+    </select>
+
+    <update id="updateHomework" parameterType="Homework">update homework set title=#{title} where id=#{id};
+ </update>
+
+    <delete id="deleteHomework" parameterType="int">
+        delete from s_homework where id=#{homeworkId};
+    </delete>
+</mapper>
