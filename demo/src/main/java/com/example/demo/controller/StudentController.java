@@ -1,7 +1,6 @@
 package com.example.demo.controller;
 
-import com.example.demo.entity.Homework;
-import com.example.demo.entity.StudentHomework;
+import com.example.demo.model.StudentHomework;
 import com.example.demo.service.HomeworkService;
 import com.example.demo.service.StudentHomeworkService;
 import com.example.demo.service.StudentService;

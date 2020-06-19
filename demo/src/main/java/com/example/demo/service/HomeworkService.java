@@ -1,37 +1,16 @@
 package com.example.demo.service;
 
-import com.example.demo.mapper.HomeworkMapper;
-import com.example.demo.entity.Homework;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import com.example.demo.model.Homework;
 
 import java.util.List;
 
-@Service
-public class HomeworkService {
+public interface HomeworkService {
 
-    @Autowired
-    HomeworkMapper homeworkmapper;
+    void insertHomework(Long homeworkId, String homeworkTitle, String homeworkContent);
 
-    public boolean insertHomework(Long homeworkId, String homeworkTitle, String homeworkContent){
-        homeworkmapper.insertHomework(homeworkId,homeworkTitle,homeworkContent);
-        return true;
-    }
+    List<Homework> selectHomework();
 
-    public List<Homework> selectHomework(){
-        return homeworkmapper.selectHomework();
-    }
+    int updateHomework(Homework homework);
 
-    public Homework findHomeworkById(int homeworkId){
-
-        return homeworkmapper.findHomeworkById(homeworkId);
-    }
-
-    public int updateHomework(Homework homework){
-        return homeworkmapper.updateHomework(homework);
-    }
-    public int deleteHomework(Long homeworkId){
-        return homeworkmapper.deleteHomework(homeworkId);
-    }
-
+    int deleteHomework(Long homeworkId);
 }

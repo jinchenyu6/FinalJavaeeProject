@@ -1,4 +1,4 @@
-package com.example.demo.entity;
+package com.example.demo.model;
 
 import javax.annotation.sql.DataSourceDefinition;
 import javax.persistence.Entity;
